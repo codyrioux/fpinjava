@@ -70,10 +70,11 @@ public class CollectionUtilities {
   }
 
   public static <T> List<T> prepend(T t, List<T> list) {
-    throw new RuntimeException("To be implemented");
+    List<T> ts = list(t);
+    return foldLeft(list, ts, (xs -> x -> append(xs, x)));
   }
 
   public static <T> List<T> reverse(List<T> list) {
-    throw new RuntimeException("To be implemented");
+      return foldLeft(list, list(), (xs -> x -> prepend(x, xs)));
   }
 }

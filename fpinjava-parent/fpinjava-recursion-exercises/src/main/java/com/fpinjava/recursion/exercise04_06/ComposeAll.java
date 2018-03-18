@@ -6,8 +6,15 @@ import com.fpinjava.common.Function;
 
 
 public class ComposeAll {
-
+    // I got a bit ahead of the book here, this is the solution to the next exercise.
+    // This one was intended to be done with foldLeft.
   static <T> Function<T, T> composeAll(List<Function<T, T>> list) {
-    throw new RuntimeException("To be implemented.");
+      return t -> {
+          T y = t;
+        for (Function<T, T> fn : list) {
+          y = fn.apply(y);
+        }
+        return y;
+      };
   }
 }

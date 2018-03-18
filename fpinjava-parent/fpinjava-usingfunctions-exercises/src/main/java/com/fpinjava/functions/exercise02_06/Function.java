@@ -10,6 +10,6 @@ public interface Function<T, U> {
   }
 
   static <T, U, V> Function<Function<T, U>, Function<Function<U, V>, Function<T, V>>> higherAndThen() {
-    throw new RuntimeException("To be implemented.");
+      return g -> f -> x -> f.apply(g.apply(x));
   }
 }

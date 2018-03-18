@@ -22,6 +22,8 @@ distrib/
 *.*~
 *.log
 *.iml
+*.ipr
+*.iws
 .idea/
 GeneratedCode/doc/api
 target/

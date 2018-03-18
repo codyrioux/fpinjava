@@ -82,10 +82,10 @@ public class CollectionUtilities {
   }
 
   public static <T, U> List<U> mapViaFoldLeft(List<T> list, Function<T, U> f) {
-    throw new RuntimeException("To be implemented");
+      return foldLeft(list, list(), xs -> x -> append(xs, f.apply(x)));
   }
 
   public static <T, U> List<U> mapViaFoldRight(List<T> list, Function<T, U> f) {
-    throw new RuntimeException("To be implemented");
+      return foldRight(list, list(), x -> xs -> prepend(f.apply(x), xs));
   }
 }

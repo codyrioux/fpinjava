@@ -26,14 +26,20 @@ public class CollectionUtilities {
   }
 
   public static <T> T head(List<T> list) {
-    throw new RuntimeException("To be implemented");
+    if (list.size() < 1) {
+      throw new IllegalStateException("The list passed to head must contain at least one element.");
+    }
+    return list.get(0);
   }
 
   private static <T> List<T > copy(List<T> ts) {
-    throw new RuntimeException("To be implemented");
+      return Collections.unmodifiableList(new ArrayList<>(ts));
   }
 
   public static <T> List<T> tail(List<T> list) {
-    throw new RuntimeException("To be implemented");
+    if (list.size() < 1) {
+      throw new IllegalStateException("The list passed to tail must contain at least one element.");
+    }
+      return Collections.unmodifiableList(copy(list).subList(1, list.size()));
   }
 }

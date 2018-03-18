@@ -39,7 +39,7 @@ public abstract class List<A> {
     }
 
     public String toString() {
-      throw new RuntimeException("To be implemented");
+        return "[NIL]";
     }
   }
 
@@ -71,7 +71,7 @@ public abstract class List<A> {
     }
 
     public String toString() {
-      throw new RuntimeException("To be implemented");
+
     }
 }
 
